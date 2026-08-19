@@ -3,10 +3,10 @@ import java.util.List;
 
 public class Student {
 
-    private List<Double> scores;
+    private List<Double> studentScores;
 
     public Student() {
-        scores = new ArrayList<>();
+        studentScores = new ArrayList<>();   
     }
 
     /**
@@ -20,6 +20,6 @@ public class Student {
             throw new IllegalArgumentException("Score cannot be negative");
         }
 
-        scores.add(studentScore);
+        studentScores.add(studentScore);     
     }
 }
