@@ -22,6 +22,14 @@ public class Student {
         studentMarks.add(studentScore);
     }
 
+        /**
+     * Adds a non-negative score to the student's scores.
+     * Negative scores are rejected with IllegalArgumentException.
+     *
+     * @param studentScore the score to add
+     * @throws IllegalArgumentException if the score is negative
+     */
+
     /**
      * Calculates the average of all scores.
      *
