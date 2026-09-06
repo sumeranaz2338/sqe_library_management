@@ -1,16 +1,30 @@
-# Requirements Traceability Matrix - GradeBook
+# Requirements Traceability Matrix - Library Management System
 
-| Requirement ID | Description | Test Cases |
-|----------------|-------------|------------|
-| REQ-1 | Create Student | TC-001, TC-002 |
-| REQ-2 | No duplicate roll numbers | TC-003 |
-| REQ-3 | Add score | TC-004, TC-006, TC-011 |
-| REQ-4 | No negative scores | TC-005 |
-| REQ-5 | Calculate average | TC-007, TC-009, TC-010 |
-| REQ-6 | Average = 0.0 for no scores | TC-008 |
-| REQ-7 | Find by roll number | TC-012 |
+| Requirement ID | Description | Test Cases | Coverage |
+|----------------|-------------|------------|----------|
+| REQ-1 | Add book with valid data | TC-001 | ✅ Covered |
+| REQ-2 | Reject duplicate ISBN | TC-002 | ✅ Covered |
+| REQ-3 | Reject malformed ISBN | TC-003 | ✅ Covered |
+| REQ-4 | Register member with valid data | TC-004 | ✅ Covered |
+| REQ-5 | Reject duplicate member ID | TC-005 | ✅ Covered |
+| REQ-6 | Borrow book when copies available | TC-006 | ✅ Covered |
+| REQ-7 | Reject borrow when NO copies | TC-007 | ✅ Covered |
+| REQ-8 | Return book that was borrowed | TC-008 | ✅ Covered |
+| REQ-9 | Reject return of NOT borrowed | TC-009 | ✅ Covered |
+| REQ-10 | Allow borrow up to 3 books | TC-010 | ✅ Covered |
+| REQ-11 | Reject borrow beyond 3 books | TC-011 | ✅ Covered |
+| REQ-12 | Search books | TC-012 | ✅ Covered |
 
-## Summary
-- Total Requirements: 7
-- Total Test Cases: 12
-- All requirements covered ✅
+## Traceability Summary
+
+| Metric | Count |
+|--------|-------|
+| Total Requirements | 12 |
+| Requirements with Test Cases | 12 |
+| Requirements without Test Cases | 0 |
+| Total Test Cases | 12 |
+| Average Test Cases per Requirement | 1.0 |
+
+## Gap Analysis
+
+✅ All 12 requirements have at least one test case. No gaps identified.
