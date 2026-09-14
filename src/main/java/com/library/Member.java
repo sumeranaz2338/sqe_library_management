@@ -8,7 +8,7 @@ public class Member {
     private String memberId;
     private String email;
     private List<String> borrowedBooks;
-    private static final int BORROW_LIMIT = 3;
+    private static final int BORROW_LIMIT = 5;
 
     public Member(String name, String memberId, String email) {
         this.name = name;

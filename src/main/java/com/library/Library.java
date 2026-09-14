@@ -101,4 +101,30 @@ public class Library {
     public List<Member> getAllMembers() {
         return new ArrayList<>(members.values());
     }
+
+    public String fineTier(int daysOverdue) {
+    if (daysOverdue < 0) {
+        throw new IllegalArgumentException("Days overdue cannot be negative");
+    }
+
+    if (daysOverdue == 0) {
+        return "None";
+    } else if (daysOverdue <= 7) {
+        return "Low";
+    } else if (daysOverdue <= 14) {
+        return "Medium";
+    } else if (daysOverdue <= 30) {
+        return "High";
+    } else {
+        return "Severe";
+    }
+}
+
+    public boolean validateIsbn(String isbn) {
+    if (isbn == null) {
+        return false;
+    }
+
+    return isbn.matches("\\d{13}");
+}
 }
