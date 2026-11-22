@@ -1,6 +1,10 @@
 package com.library;
 
 public class GradeBook {
+    private static final int GRADE_A_MIN = 90;
+    private static final int GRADE_B_MIN = 80;
+    private static final int GRADE_C_MIN = 70;
+    private static final int GRADE_D_MIN = 60;
     
     public static String letterGrade(int score) {
         if (score < 0 || score > 100) {
