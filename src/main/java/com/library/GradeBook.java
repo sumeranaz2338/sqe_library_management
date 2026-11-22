@@ -7,6 +7,10 @@ public class GradeBook {
     private static final int GRADE_D_MIN = 60;
     private static final int MAX_SCORE = 100;
     private static final int MAX_NAME_LENGTH = 50;
+
+        private GradeBook() {
+        // static utility class - no instances
+    }
     
     public static String letterGrade(int score) {
         if (score < 0 || score > 100) {
