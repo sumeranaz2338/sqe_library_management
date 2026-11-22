@@ -21,9 +21,13 @@ public class LibraryTest {
         library.borrowBook("M001", "2222222222222");
         library.borrowBook("M001", "3333333333333");
 
-        assertDoesNotThrow(() ->
-                library.borrowBook("M001", "4444444444444")
-        );
+                String message = library.borrowBook("M001", "4444444444444");
+
+        assertEquals("Book 'Book 4' borrowed successfully", message);
+        assertEquals(4, library.getAllMembers().get(0).getBorrowedBooks().size());
+        assertEquals(0, library.getAllBooks().stream()
+                .filter(b -> b.getIsbn().equals("4444444444444"))
+                .findFirst().orElseThrow().getCopies());
     }
 
     @Test
