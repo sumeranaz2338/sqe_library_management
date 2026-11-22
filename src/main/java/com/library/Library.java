@@ -6,6 +6,9 @@ public class Library {
     private Map<String, Book> books;
     private Map<String, Member> members;
     private Map<String, List<String>> borrowedBooks;
+    private static final int LOW_FINE_MAX_DAYS = 7;
+    private static final int MEDIUM_FINE_MAX_DAYS = 14;
+    private static final int HIGH_FINE_MAX_DAYS = 30;
 
     public Library() {
         this.books = new HashMap<>();
