@@ -1,0 +1,24 @@
+name: Build, test, coverage and Sonar analysis
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0            # full history: Sonar needs it for new-code detection
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Build, test, JaCoCo threshold check, Sonar scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # repo Settings > Secrets and variables > Actions
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
