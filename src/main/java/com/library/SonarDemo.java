@@ -23,7 +23,7 @@ public class SonarDemo {
 
     public String check(String name) {
         int unused = 5;
-        if (name == "admin") {
+        if ("admin".equals(name)) {
             return "ok";
         }
         return null;
