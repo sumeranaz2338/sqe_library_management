@@ -24,3 +24,17 @@
 - [ ] Any security or data-exposure concern (returning internal mutable lists, hard-coded secrets)?
 - [ ] Any performance concern (nested loops over all members/books)?
 - [ ] Is it backwards compatible with existing callers and tests?
+
+## 6. Lessons Learned from Code Review
+
+- Always verify calculation formulas, especially denominators and percentage calculations.
+- Handle edge cases such as empty libraries and single-member libraries.
+- Validate method arguments and provide clear exceptions for invalid inputs.
+- Write meaningful Javadoc explaining method behavior, parameters, return values, and time complexity.
+- Add tests for minimum, middle, maximum, and boundary cases.
+- Treat members with equal borrowing counts consistently.
+- Use named constants instead of unexplained magic numbers.
+- Use private constructors for utility classes containing only static methods.
+- Run `mvn clean verify` before submitting a pull request.
+- Address reviewer feedback before requesting final approval.
+- Never merge a pull request before completing the required review process.
