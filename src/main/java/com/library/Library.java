@@ -18,7 +18,7 @@ public class Library {
     }
 
     public String addBook(String title, String author, String isbn, String category, int copies) {
-        if (isbn == null || isbn.length() < 10) {
+        if (isbn == null || isbn.length() < MIN_ISBN_LENGTH) {
             throw new IllegalArgumentException("Invalid ISBN format");
         }
         if (books.containsKey(isbn)) {
@@ -113,11 +113,11 @@ public class Library {
 
     if (daysOverdue == 0) {
         return "None";
-    } else if (daysOverdue <= 7) {
+    } else if (daysOverdue <= LOW_FINE_MAX_DAYS) {
         return "Low";
-    } else if (daysOverdue <= 14) {
+    } else if (daysOverdue <= MEDIUM_FINE_MAX_DAYS) {
         return "Medium";
-    } else if (daysOverdue <= 30) {
+    } else if (daysOverdue <= HIGH_FINE_MAX_DAYS) {
         return "High";
     } else {
         return "Severe";

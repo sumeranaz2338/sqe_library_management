@@ -13,13 +13,13 @@ public class GradeBook {
     }
     
     public static String letterGrade(int score) {
-        if (score < 0 || score > 100) {
+        if (score < 0 || score > MAX_SCORE) {
             throw new IllegalArgumentException("Score must be between 0 and 100");
         }
-        if (score >= 90) return "A";
-        if (score >= 80) return "B";
-        if (score >= 70) return "C";
-        if (score >= 60) return "D";
+        if (score >= GRADE_A_MIN) return "A";
+        if (score >= GRADE_B_MIN) return "B";
+        if (score >= GRADE_C_MIN) return "C";
+        if (score >= GRADE_D_MIN) return "D";
         return "F";
     }
     
@@ -27,7 +27,7 @@ public class GradeBook {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
-        if (name.length() > 50) {
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("Name cannot exceed 50 characters");
         }
         if (!name.matches("^[a-zA-Z\\s\\-]+$")) {
