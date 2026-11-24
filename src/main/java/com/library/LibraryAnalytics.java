@@ -12,6 +12,6 @@ public class LibraryAnalytics {
                 r++;
             }
         }
-        return r / all.size() * 100;
+        return (double) r / all.size() * 100;
     }
 }
